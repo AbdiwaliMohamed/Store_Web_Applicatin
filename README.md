@@ -1,0 +1,1 @@
+Angular Simple Store Web Applicatin
