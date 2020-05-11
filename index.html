@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="urf8">
+    <title>Single Page Application</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script src="angular-route.js"></script> <!-- step one -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     <script src="App.js"></script>
+<script>
+</script>
+</head>
+<body ng-app="myApp">
+ <nav ng-controller="homeCtrl" class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- <nav class="navbar navbar-fixed-top navbar-inverse">
+             <div id="x" class="collapse navbar-collapse ">
+ <button class="navbar-toggle" data-toggle="collapse" data-target="#x">  -->
+                <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#!Store" class="navbar-brand">My Store</a>
+        </div>
+            <div class="navbar-collapse" ng-class="isCollapsed ? 'collapse' : 'in'">
+            <ul class="nav navbar-nav" style="font-size: 16px">
+                <li ng-class="getClass('/')"><a href="#/!">Home</a></li>
+                <li ng-class="getClass('/Store')"><a href="#!Store">Store</a></li>
+                <li ng-class="getClass('/ContactUs')"><a href="#!ContactUs">contact Us</a></li>
+                <li ng-class="getClass('/About')"><a href="#!About">About Us</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <button class="btn btn-success">Login</button>
+                </form>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="container" style="margin-top: 60px">
+    <ng-view></ng-view>
+</section>
+
+</body>
+</html>
